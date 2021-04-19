@@ -1,8 +1,5 @@
 class Vehicle {
-  drive(): void {
-    console.log('chugga chugga')
-  }
-  hunk(): void {
+  public hunk(): void {
     console.log('beep')
   }
 }
@@ -10,11 +7,14 @@ class Vehicle {
 //A type of vehicle
 //inheritance properies
 class Car extends Vehicle {
-  drive(): void {
+  private drive(): void {
     console.log('moving now...')
+  }
+  startDriving(): void {
+    this.drive()
   }
 }
 
 const car = new Car()
-car.drive()
+car.startDriving()
 car.hunk()
